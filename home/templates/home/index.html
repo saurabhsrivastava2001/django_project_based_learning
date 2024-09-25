@@ -4,10 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Django learning</title>
+    <style>
+        table, th, td {
+  border: 2px solid rgb(21, 9, 238);
+}
+    </style>
 </head>
 <body>
 
     <h1> "django tutorial" </h1>
+
+    <table class="container">
+        <tr>
+          <th>s_no</th>
+          <th>name</th>
+          <th>age</th>
+          <th>can vote</th>
+        </tr>
+
+        {% for people in peoples %}
+
+        <tr>
+          <td>{{forloop.counter}}</td>
+          <td>{{people.name}}</td>
+          <td>{{people.age}}</td>
+          <td>
+            {% if people.age >= 18 %}
+            😄
+            {% else %}
+            😕
+            {% endif %}
+          </td>
+        </tr>
+
+        {% endfor %}
+
+        
+      </table>
     
 </body>
 </html>

@@ -4,7 +4,16 @@ from django.http import HttpResponse
 
 # Create your views here.
 def home(request):
-    return render(request, 'home/index.html')
+    peoples=[
+        {'name': 'saurabh','age': 22 },
+        {'name': 'tushar','age': 21 },
+        {'name': 'ajaya','age': 23 },
+        {'name': 'ajit','age': 16 }
+    ]
+    
+    
+    
+    return render(request, 'home/index.html',context={'peoples':peoples})
 
     
     
